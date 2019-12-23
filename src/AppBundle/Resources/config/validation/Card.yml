@@ -25,7 +25,7 @@ AppBundle\Entity\Card:
         type:
             - Type: string
             - Choice:
-                choices: [attachment, character, event, holding, province, role, stronghold]
+                choices: [attachment, character, event, holding, province, role, stronghold, treaty]
                 strict: true
                 message: Not a valid type.
         element:
@@ -36,7 +36,7 @@ AppBundle\Entity\Card:
         side:
             - Type: string
             - Choice:
-                choices: [conflict, dynasty, province, role]
+                choices: [conflict, dynasty, province, role, treaty]
                 strict: true
                 message: Not a valid side.
         roleRestriction:
