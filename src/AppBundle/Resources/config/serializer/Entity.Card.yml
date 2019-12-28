@@ -36,6 +36,9 @@ AppBundle\Entity\Card:
         isRestricted:
             expose: true
             groups: ['Default','Source']
+        isBanned:
+            expose: true
+            groups: ['Default','Source']
         side:
             expose: true
             groups: ['Default','Source']

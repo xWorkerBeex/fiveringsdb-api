@@ -299,6 +299,15 @@ class Card
      */
     private $isRestricted;
 
+     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_banned", type="boolean", nullable=false)
+     *
+     * @Skizzle\Field(type="boolean")
+     */
+    private $isBanned;
+
     /**
      * @var array
      *
@@ -418,6 +427,13 @@ class Card
     public function setRestricted (bool $isRestricted): self
     {
         $this->isRestricted = $isRestricted;
+
+        return $this;
+    }
+
+    public function setBanned (bool $isBanned): self
+    {
+        $this->isBanned = $isBanned;
 
         return $this;
     }
@@ -573,6 +589,11 @@ class Card
     public function isRestricted (): bool
     {
         return $this->isRestricted;
+    }
+
+    public function isBanned (): bool
+    {
+        return $this->isBanned;
     }
 
     public function getSide (): string
