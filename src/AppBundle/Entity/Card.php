@@ -129,11 +129,11 @@ class Card
     private $clan;
 
     /**
-     * @var string|null
+     * @var array
      *
-     * @ORM\Column(name="element", type="text", nullable=true)
+     * @ORM\Column(name="element", type="simple_array", nullable=true)
      *
-     * @Skizzle\Field(type="string")
+     * @Skizzle\Field(type="array")
      */
     private $element;
 
@@ -410,7 +410,7 @@ class Card
         return $this;
     }
 
-    public function setElement (string $element = null): self
+    public function setElement (array $element = []): self
     {
         $this->element = $element;
 
@@ -576,7 +576,7 @@ class Card
         return $this->clan;
     }
 
-    public function getElement (): ?string
+    public function getElement (): array
     {
         return $this->element;
     }

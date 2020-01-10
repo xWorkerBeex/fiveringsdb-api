@@ -29,14 +29,10 @@ AppBundle\Entity\Card:
                 strict: true
                 message: Not a valid type.
         element:
-            - Type: string
-            - Choice:
-                choices: [air, all, earth, fire, void, water]
-                strict: true
-                message: Not a valid element.
-            - Expression:
-                expression: "this.getType() in ['province'] or value === null"
-                message: Cannot have an element.
+            - Type: array
+            - All:
+                - Type: string
+                - NotBlank: ~
         side:
             - Type: string
             - Choice:
