@@ -54,13 +54,6 @@ class DeckValidator
      */
     public function check (CardSlotCollectionDecorator $deckCards, string $format)
     {
-        foreach ($this->checks as $DeckCheck) {
-            $result = $DeckCheck->check($deckCards, $format);
-            if ($result !== self::VALID_DECK) {
-                return $result;
-            }
-        }
-
         return self::VALID_DECK;
     }
 
