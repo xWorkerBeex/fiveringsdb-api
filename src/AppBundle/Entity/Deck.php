@@ -22,6 +22,7 @@ class Deck
 {
     const FORMAT_STANDARD = 'standard';
     const FORMAT_SINGLE_CORE = 'single-core';
+    const FORMAT_SKIRMISH = 'skirmish';
 
     /**
      * Unique identifier of the deck
