@@ -311,6 +311,15 @@ class Card
     private $isBanned;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_banned_in_skirmish", type="boolean", nullable=false)
+     *
+     * @Skizzle\Field(type="boolean")
+     */
+    private $isBannedInSkirmish;
+
+    /**
      * @var array
      *
      * @ORM\Column(name="allowed_clans", type="simple_array", nullable=true)
@@ -436,6 +445,13 @@ class Card
     public function setBanned (bool $isBanned): self
     {
         $this->isBanned = $isBanned;
+
+        return $this;
+    }
+
+    public function setBannedInSkirmish (bool $isBannedInSkirmish): self
+    {
+        $this->isBannedInSkirmish = $isBannedInSkirmish;
 
         return $this;
     }
@@ -596,6 +612,11 @@ class Card
     public function isBanned (): bool
     {
         return $this->isBanned;
+    }
+
+    public function isBannedInSkirmish (): bool
+    {
+        return $this->isBannedInSkirmish;
     }
 
     public function getSide (): string

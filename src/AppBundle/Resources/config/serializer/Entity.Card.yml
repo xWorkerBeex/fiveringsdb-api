@@ -39,6 +39,9 @@ AppBundle\Entity\Card:
         isBanned:
             expose: true
             groups: ['Default','Source']
+        isBannedInSkirmish:
+            expose: true
+            groups: ['Default','Source']
         side:
             expose: true
             groups: ['Default','Source']
