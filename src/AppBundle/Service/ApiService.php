@@ -65,7 +65,7 @@ class ApiService
     public function buildContent ($data = null)
     {
         $content = [];
-        $content['rrg-version'] = '12';
+        $content['rrg-version'] = '13';
         if ($data instanceof SearchInterface) {
             $content['records'] = $data->getRecords();
             $content['size'] = $data->getTotal();
