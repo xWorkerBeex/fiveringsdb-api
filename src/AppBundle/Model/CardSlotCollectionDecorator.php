@@ -130,8 +130,18 @@ class CardSlotCollectionDecorator extends ArrayCollection
     public function findPrimaryClan (): ?string
     {
         $stronghold = $this->findStronghold();
+        if ($stronghold) {
+          return $stronghold->getClan();
+        }
 
-        return $stronghold ? $stronghold->getClan() : null;
+        foreach ($this->toArray() as $slot) {
+          if ($slot->getCard()->getClan() !== 'neutral'
+              && $slot->getCard()->getSide() === 'dynasty') {
+              return $slot->getCard()->getClan();
+          }
+      }
+
+        return null;
     }
 
     public function findSecondaryClan (string $primaryClan = null): ?string
