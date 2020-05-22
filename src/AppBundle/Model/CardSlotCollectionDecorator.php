@@ -131,15 +131,15 @@ class CardSlotCollectionDecorator extends ArrayCollection
     {
         $stronghold = $this->findStronghold();
         if ($stronghold) {
-          return $stronghold->getClan();
+            return $stronghold->getClan();
         }
 
         foreach ($this->toArray() as $slot) {
-          if ($slot->getCard()->getClan() !== 'neutral'
-              && $slot->getCard()->getSide() === 'dynasty') {
-              return $slot->getCard()->getClan();
-          }
-      }
+            if ($slot->getCard()->getClan() !== 'neutral'
+                && $slot->getCard()->getSide() === 'dynasty') {
+                return $slot->getCard()->getClan();
+            }
+        }
 
         return null;
     }
