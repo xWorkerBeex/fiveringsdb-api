@@ -301,6 +301,15 @@ class Card
      */
     private $isRestricted;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_restricted_in_jade", type="boolean", nullable=false)
+     *
+     * @Skizzle\Field(type="boolean")
+     */
+    private $isRestrictedInJade;
+
      /**
      * @var boolean
      *
@@ -318,6 +327,15 @@ class Card
      * @Skizzle\Field(type="boolean")
      */
     private $isBannedInSkirmish;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_banned_in_jade", type="boolean", nullable=false)
+     *
+     * @Skizzle\Field(type="boolean")
+     */
+    private $isBannedInJade;
 
     /**
      * @var array
@@ -442,6 +460,13 @@ class Card
         return $this;
     }
 
+    public function setRestrictedInJade (bool $isRestrictedInJade): self
+    {
+        $this->isRestrictedInJade = $isRestrictedInJade;
+
+        return $this;
+    }
+
     public function setBanned (bool $isBanned): self
     {
         $this->isBanned = $isBanned;
@@ -452,6 +477,13 @@ class Card
     public function setBannedInSkirmish (bool $isBannedInSkirmish): self
     {
         $this->isBannedInSkirmish = $isBannedInSkirmish;
+
+        return $this;
+    }
+
+    public function setBannedInJade (bool $isBannedInJade): self
+    {
+        $this->isBannedInJade = $isBannedInJade;
 
         return $this;
     }
@@ -609,6 +641,11 @@ class Card
         return $this->isRestricted;
     }
 
+    public function isRestrictedInJade (): bool
+    {
+        return $this->isRestrictedInJade;
+    }
+
     public function isBanned (): bool
     {
         return $this->isBanned;
@@ -617,6 +654,11 @@ class Card
     public function isBannedInSkirmish (): bool
     {
         return $this->isBannedInSkirmish;
+    }
+
+    public function isBannedInJade (): bool
+    {
+        return $this->isBannedInJade;
     }
 
     public function getSide (): string
