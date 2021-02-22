@@ -36,10 +36,16 @@ AppBundle\Entity\Card:
         isRestricted:
             expose: true
             groups: ['Default','Source']
+        isRestrictedInJade:
+            expose: true
+            groups: ['Default','Source']
         isBanned:
             expose: true
             groups: ['Default','Source']
         isBannedInSkirmish:
+            expose: true
+            groups: ['Default','Source']
+        isBannedInJade:
             expose: true
             groups: ['Default','Source']
         side:
