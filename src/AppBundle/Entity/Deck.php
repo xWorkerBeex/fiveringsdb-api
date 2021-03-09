@@ -24,6 +24,7 @@ class Deck
     const FORMAT_SINGLE_CORE = 'single-core';
     const FORMAT_SKIRMISH = 'skirmish';
     const FORMAT_JADE_EDICT = 'jade-edict';
+    const FORMATS = ['standard', 'single-core', 'skirmish', 'jade-edict'];
 
     /**
      * Unique identifier of the deck
