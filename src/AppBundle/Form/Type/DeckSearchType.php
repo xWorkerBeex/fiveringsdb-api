@@ -64,6 +64,7 @@ class DeckSearchType extends AbstractType
             [
                 'data_class'         => DeckSearch::class,
                 'allow_extra_fields' => true,
+                'validation_groups' => false,
             ]
         );
     }
