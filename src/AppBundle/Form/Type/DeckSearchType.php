@@ -3,6 +3,7 @@
 namespace AppBundle\Form\Type;
 
 use AppBundle\Entity\Card;
+use AppBundle\Entity\Deck;
 use AppBundle\Search\DeckSearch;
 use AppBundle\Service\DeckSearchService;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -45,6 +46,9 @@ class DeckSearchType extends AbstractType
             ->add('secondaryClan', ChoiceType::class, [
                 'choices' => Card::CLANS,
             ])
+            ->add('format', ChoiceType::class, [
+                'choices' => Deck::FORMATS,
+            ])
             ->add('featured', CheckboxType::class)
             ->add('cards', EntityType::class, [
                 'class' => Card::class,
@@ -59,7 +63,8 @@ class DeckSearchType extends AbstractType
         $resolver->setDefaults(
             [
                 'data_class'         => DeckSearch::class,
-                'allow_extra_fields' => false,
+                'allow_extra_fields' => true,
+                'validation_groups' => false,
             ]
         );
     }
