@@ -63,8 +63,7 @@ class DeckSearchType extends AbstractType
         $resolver->setDefaults(
             [
                 'data_class'         => DeckSearch::class,
-                'allow_extra_fields' => true,
-                'validation_groups' => false,
+                'allow_extra_fields' => false,
             ]
         );
     }
