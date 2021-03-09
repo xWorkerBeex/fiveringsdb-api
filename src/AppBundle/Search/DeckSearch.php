@@ -50,7 +50,6 @@ class DeckSearch extends AbstractPaginatedSearch
     {
         $this->featured = false;
         $this->cards = [];
-        $this->format = 'standard';
         parent::__construct();
     }
 
