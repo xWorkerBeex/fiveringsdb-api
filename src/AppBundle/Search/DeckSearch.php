@@ -32,6 +32,11 @@ class DeckSearch extends AbstractPaginatedSearch
     private $secondaryClan;
 
     /**
+     * @var string|null
+     */
+    private $format;
+
+    /**
      * @var bool
      */
     private $featured;
@@ -92,6 +97,18 @@ class DeckSearch extends AbstractPaginatedSearch
     public function setSecondaryClan ($secondaryClan = null): self
     {
         $this->secondaryClan = $secondaryClan;
+
+        return $this;
+    }
+
+    public function getFormat (): ?string
+    {
+        return $this->format;
+    }
+
+    public function setFormat ($format = null): self
+    {
+        $this->format = $format;
 
         return $this;
     }
