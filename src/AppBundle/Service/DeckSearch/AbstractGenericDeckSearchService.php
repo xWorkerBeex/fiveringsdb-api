@@ -73,6 +73,10 @@ abstract class AbstractGenericDeckSearchService extends AbstractDeckSearchServic
             $qb->andWhere('d.secondaryClan = :secondaryClan');
         }
 
+        if ($search->getFormat() !== null) {
+            $qb->andWhere('d.format = :format');
+        }
+
         if ($search->isFeatured()) {
             $qb->innerJoin('AppBundle:Feature', 'f', Query\Expr\Join::WITH, 'f.deck = d');
         }
@@ -110,6 +114,10 @@ abstract class AbstractGenericDeckSearchService extends AbstractDeckSearchServic
         if ($search->getSecondaryClan() !== null) {
             $query->setParameter('secondaryClan', $search->getSecondaryClan());
         }
+
+        if ($search->getFormat() !== null) {
+          $query->setParameter('format', $search->getFormat());
+      }
 
         if (count($search->getCards()) > 0) {
             foreach ($search->getCards() as $index => $card) {
