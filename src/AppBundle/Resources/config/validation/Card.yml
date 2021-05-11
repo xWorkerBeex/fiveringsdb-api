@@ -74,13 +74,13 @@ AppBundle\Entity\Card:
             - Type: string
             - Regex: "/^[0-9]+|X$/"
             - Expression:
-                expression: "this.getType() in ['character'] or value === null"
+                expression: "this.getType() in ['character', 'warlord'] or value === null"
                 message: Cannot have a military skill.
         political:
             - Type: string
             - Regex: "/^[0-9]+|X$/"
             - Expression:
-                expression: "this.getType() in ['character'] or value === null"
+                expression: "this.getType() in ['character', 'warlord'] or value === null"
                 message: Cannot have a political skill.
         strength:
             - Type: string
@@ -107,7 +107,7 @@ AppBundle\Entity\Card:
             - Type: integer
             - GreaterThanOrEqual: 0
             - Expression:
-                expression: "this.getType() in ['character'] or value === null"
+                expression: "this.getType() in ['character', 'warlord'] or value === null"
                 message: Cannot have a glory value.
         honor:
             - Type: integer
@@ -119,7 +119,7 @@ AppBundle\Entity\Card:
             - Type: integer
             - GreaterThanOrEqual: 0
             - Expression:
-                expression: "this.getType() in ['stronghold'] or value === null"
+                expression: "this.getType() in ['stronghold', 'warlord'] or value === null"
                 message: Cannot have a fate value.
         influencePool:
             - Type: integer
