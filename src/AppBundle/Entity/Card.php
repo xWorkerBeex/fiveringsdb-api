@@ -22,7 +22,7 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
  */
 class Card
 {
-    const TYPES = ['attachment', 'character', 'event', 'holding', 'province', 'role', 'stronghold', 'treaty'];
+    const TYPES = ['attachment', 'character', 'event', 'holding', 'province', 'role', 'stronghold', 'treaty', 'warlord'];
     const TYPE_ATTACHMENT = 'attachment';
     const TYPE_CHARACTER = 'character';
     const TYPE_EVENT = 'event';
@@ -31,6 +31,7 @@ class Card
     const TYPE_ROLE = 'role';
     const TYPE_STRONGHOLD = 'stronghold';
     const TYPE_TREATY = 'treaty';
+    const TYPE_WARLORD = 'warlord';
 
     const ELEMENTS = ['air', 'all', 'earth', 'fire', 'void', 'water'];
     const ELEMENT_AIR = 'air';
@@ -56,6 +57,7 @@ class Card
     const CLAN_PHOENIX = 'phoenix';
     const CLAN_SCORPION = 'scorpion';
     const CLAN_UNICORN = 'unicorn';
+    const CLAN_SHADOWLANDS = 'shadowlands';
 
     use TimestampableEntity;
     use ToStringNameTrait;

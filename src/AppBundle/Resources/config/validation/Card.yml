@@ -19,13 +19,13 @@ AppBundle\Entity\Card:
         clan:
             - Type: string
             - Choice:
-                choices: [crab, crane, dragon, lion, neutral, phoenix, scorpion, unicorn]
+                choices: [crab, crane, dragon, lion, neutral, phoenix, scorpion, unicorn, shadowlands]
                 strict: true
                 message: Not a valid clan.
         type:
             - Type: string
             - Choice:
-                choices: [attachment, character, event, holding, province, role, stronghold, treaty]
+                choices: [attachment, character, event, holding, province, role, stronghold, treaty, warlord]
                 strict: true
                 message: Not a valid type.
         element:
